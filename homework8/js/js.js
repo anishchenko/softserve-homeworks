@@ -1,4 +1,4 @@
-/1
+//1
 function upperCase(str) {
 	const re = /^[A-Z]/;
 	if(re.test(str)) {
@@ -82,6 +82,23 @@ checkEmail('my_ma-il@gmail.com'); // correct
 checkEmail('my-mail@gmail.com'); // correct
 checkEmail('my-mailgmail.com'); // incorrect
 
+/*7. */
+function checkLogin(login) {
+	const regExp = /^[a-z][a-z0-9\d\.\d]{1,9}$/gi;
+	let res = regExp.test(login);
+	console.log(res);
+	const regForNumbers = /\d*[\d+.\d+]\d*/g;
+	let numbersInLogin = login.match(regForNumbers);
+	console.log(numbersInLogin);
+}
+
+checkLogin('ee1.1r6et'); //true
+checkLogin('ee1*1ret3'); //false
+checkLogin('e1.1rehh'); //true
+checkLogin('e1.1reh6'); //true
+checkLogin('ee1*1re90(()t3'); //false
+checkLogin('e'); //false
+checkLogin('ee1-1ret35648'); //false
 
 
 
